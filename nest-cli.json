@@ -27,6 +27,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/app2/tsconfig.app.json"
       }
+    },
+    "lib1": {
+      "type": "library",
+      "root": "libs/lib1",
+      "entryFile": "index",
+      "sourceRoot": "libs/lib1/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/lib1/tsconfig.lib.json"
+      }
     }
   }
 }
