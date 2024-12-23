@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Inject } from '@nestjs/common';
 import { AppService } from './app.service';
+import { Lib1Service } from '@app/lib1';
 
 @Controller()
 export class AppController {
@@ -10,8 +11,11 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  @Inject(Lib1Service)
+  private lib: Lib1Service
+
   @Get('aaa')
   aaa() {
-    return 'aaa';
+    return 'aaa' + this.lib.xxx();
   }
 }
